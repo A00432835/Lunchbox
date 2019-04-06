@@ -1,0 +1,57 @@
+﻿@model IEnumerable<LunchBox.item>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.snackType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.snackState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.basePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.unit)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.snackType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.snackState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.basePrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.unit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.itemId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.itemId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.itemId })
+        </td>
+    </tr>
+}
+
+</table>

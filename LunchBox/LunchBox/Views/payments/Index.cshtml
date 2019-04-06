@@ -1,0 +1,75 @@
+﻿@model IEnumerable<LunchBox.payment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.discount.couponCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.order.orderStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nameOnCard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cardType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cardNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.expiryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cvv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totalPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.discount.couponCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.order.orderStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nameOnCard)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cardType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cardNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.expiryDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cvv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.paymentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.paymentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.paymentID })
+        </td>
+    </tr>
+}
+
+</table>
